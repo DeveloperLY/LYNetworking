@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LYNetworking_Example' do
+  pod 'LYNetworking', :path => '../'
+
+  target 'LYNetworking_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
