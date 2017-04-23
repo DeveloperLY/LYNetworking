@@ -1,8 +1,8 @@
 {
   "name": "LYNetworking",
   "version": "0.1.0",
-  "summary": "A short description of LYNetworking.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "LYNetworking.",
+  "description": "LYNetworking 是对AFNetworking 的二次封装库.",
   "homepage": "https://github.com/DeveloperLY/LYNetworking",
   "license": {
     "type": "MIT",
@@ -18,5 +18,13 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "LYNetworking/Classes/**/*"
+  "source_files": "LYNetworking/Classes/**/*",
+  "dependencies": {
+    "AFNetworking": [
+
+    ],
+    "YYCache": [
+
+    ]
+  }
 }

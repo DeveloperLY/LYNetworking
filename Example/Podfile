@@ -9,8 +9,8 @@ target 'LYNetworking' do
   pod 'LYNetworking', :path => '../'
 
 #  依赖的第三方库
-  pod 'AFNetworking'
-  pod 'YYCache'
+#  pod 'AFNetworking'
+#  pod 'YYCache'
 
   target 'LYNetworkingTests' do
     inherit! :search_paths
