@@ -1,27 +1,122 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="wQg-tq-qST">
+        <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="whP-gf-Uak" customClass="LYViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
-                        <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFm-CJ-S1J">
+                                <rect key="frame" x="20" y="106" width="30" height="30"/>
+                                <state key="normal" title="GET"/>
+                                <connections>
+                                    <action selector="getRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Nj-40-RPL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7p-3T-4YU">
+                                <rect key="frame" x="20" y="310" width="31" height="30"/>
+                                <state key="normal" title="上传"/>
+                                <connections>
+                                    <action selector="upload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lrd-QY-3xG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Caf-IF-NIs">
+                                <rect key="frame" x="20" y="412" width="31" height="30"/>
+                                <state key="normal" title="下载"/>
+                                <connections>
+                                    <action selector="download:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vns-f3-yTv"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nm7-QS-WAN">
+                                <rect key="frame" x="100" y="120" width="255" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="HmF-F7-4F6"/>
+                                </constraints>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QTL-Ms-Ah8">
+                                <rect key="frame" x="100" y="222" width="255" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="ATa-vs-wSm"/>
+                                </constraints>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8fN-Bv-Ctc">
+                                <rect key="frame" x="100" y="324" width="255" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="xPZ-mY-afU"/>
+                                </constraints>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ryI-Te-P0U">
+                                <rect key="frame" x="100" y="426" width="255" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="tbq-Bg-Oj5"/>
+                                </constraints>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="图片地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2G-Pu-tsr">
+                                <rect key="frame" x="153" y="546" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3f-Mo-gKi">
+                                <rect key="frame" x="20" y="208" width="40" height="30"/>
+                                <state key="normal" title="POST"/>
+                                <connections>
+                                    <action selector="postRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PF1-Kv-0Le"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="a3f-Mo-gKi" firstAttribute="centerY" secondItem="QTL-Ms-Ah8" secondAttribute="centerY" id="0te-jp-fh9"/>
+                            <constraint firstItem="Nm7-QS-WAN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="0xh-8I-JdT"/>
+                            <constraint firstItem="aFm-CJ-S1J" firstAttribute="centerY" secondItem="Nm7-QS-WAN" secondAttribute="centerY" id="2oJ-QF-W9l"/>
+                            <constraint firstItem="ryI-Te-P0U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="5c1-s8-sDy"/>
+                            <constraint firstItem="a3f-Mo-gKi" firstAttribute="leading" secondItem="aFm-CJ-S1J" secondAttribute="leading" id="D1h-gF-6Hl"/>
+                            <constraint firstItem="8fN-Bv-Ctc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="IWG-Xt-1cj"/>
+                            <constraint firstItem="P2G-Pu-tsr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IuL-pO-oh5"/>
+                            <constraint firstItem="8fN-Bv-Ctc" firstAttribute="top" secondItem="QTL-Ms-Ah8" secondAttribute="bottom" constant="100" id="NVg-Yg-Y2B"/>
+                            <constraint firstAttribute="trailing" secondItem="8fN-Bv-Ctc" secondAttribute="trailing" constant="20" id="Ph1-jg-Rpj"/>
+                            <constraint firstAttribute="trailing" secondItem="Nm7-QS-WAN" secondAttribute="trailing" constant="20" id="QmY-Ig-UNV"/>
+                            <constraint firstAttribute="trailing" secondItem="QTL-Ms-Ah8" secondAttribute="trailing" constant="20" id="Ret-fE-KdG"/>
+                            <constraint firstItem="aFm-CJ-S1J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="RhN-Cm-OfV"/>
+                            <constraint firstItem="Nm7-QS-WAN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="Tj5-mg-MZX"/>
+                            <constraint firstItem="Caf-IF-NIs" firstAttribute="centerY" secondItem="ryI-Te-P0U" secondAttribute="centerY" id="UVz-RU-e4M"/>
+                            <constraint firstItem="Z7p-3T-4YU" firstAttribute="leading" secondItem="a3f-Mo-gKi" secondAttribute="leading" id="VGD-lI-R8B"/>
+                            <constraint firstItem="QTL-Ms-Ah8" firstAttribute="top" secondItem="Nm7-QS-WAN" secondAttribute="bottom" constant="100" id="bED-b0-6A7"/>
+                            <constraint firstItem="QTL-Ms-Ah8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="gqb-wa-T1Q"/>
+                            <constraint firstItem="Z7p-3T-4YU" firstAttribute="centerY" secondItem="8fN-Bv-Ctc" secondAttribute="centerY" id="gvF-1Z-Jsy"/>
+                            <constraint firstItem="ryI-Te-P0U" firstAttribute="top" secondItem="8fN-Bv-Ctc" secondAttribute="bottom" constant="100" id="nYR-op-6LC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="P2G-Pu-tsr" secondAttribute="bottom" constant="100" id="oZm-Jm-rNd"/>
+                            <constraint firstItem="Caf-IF-NIs" firstAttribute="trailing" secondItem="Z7p-3T-4YU" secondAttribute="trailing" id="pSh-zl-Csc"/>
+                            <constraint firstAttribute="trailing" secondItem="ryI-Te-P0U" secondAttribute="trailing" constant="20" id="zQu-u9-zdU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="downloadProgress" destination="ryI-Te-P0U" id="DEL-Em-T4h"/>
+                        <outlet property="getProgress" destination="Nm7-QS-WAN" id="soB-nf-a5c"/>
+                        <outlet property="postProgress" destination="QTL-Ms-Ah8" id="kCC-B7-V6D"/>
+                        <outlet property="savePathLabel" destination="P2G-Pu-tsr" id="ZNl-ib-TFM"/>
+                        <outlet property="uploadProgress" destination="8fN-Bv-Ctc" id="eNN-fd-ncP"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>

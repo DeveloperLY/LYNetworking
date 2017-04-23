@@ -2,16 +2,15 @@
 //  main.m
 //  LYNetworking
 //
-//  Created by DeveloperLY on 04/22/2017.
-//  Copyright (c) 2017 DeveloperLY. All rights reserved.
+//  Created by LiuY on 2017/4/22.
+//  Copyright © 2017年 DeveloperLY. All rights reserved.
 //
 
-@import UIKit;
-#import "LYAppDelegate.h"
+#import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-int main(int argc, char * argv[])
-{
+int main(int argc, char * argv[]) {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([LYAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
