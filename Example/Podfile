@@ -6,7 +6,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'LYNetworking' do
-  pod 'LYNetworking', :path => '../'
+  pod 'LYNetworking'#, :path => '../'
 
 #  依赖的第三方库
 #  pod 'AFNetworking'

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "LYNetworking.h"
+#import <LYNetworking/LYNetworking.h>
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIProgressView *getProgress;
