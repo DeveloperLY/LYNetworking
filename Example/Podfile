@@ -1,16 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/Artsy/Specs.git'
-source 'https://github.com/DeveloperLY/LYOpenSpecs.git' #私有索引库...
 
 platform :ios, '8.0'
 use_frameworks!
 
 target 'LYNetworking' do
-  pod 'LYNetworking'#, :path => '../'
-
-#  依赖的第三方库
-#  pod 'AFNetworking'
-#  pod 'YYCache'
+  pod 'LYNetworking', :path => '../'
 
   target 'LYNetworkingTests' do
     inherit! :search_paths

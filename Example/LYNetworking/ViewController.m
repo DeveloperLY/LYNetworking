@@ -59,7 +59,43 @@
     }];
 }
 
+- (IBAction)putRequest:(UIButton *)sender {
+    [LYNetworking putRequestURLStr:@"http://httpbin.org/put" parameters:nil success:^(id response) {
+        NSLog(@"result = %@", response);
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+
+- (IBAction)patchRequest:(UIButton *)sender {
+    [LYNetworking patchRequestURLStr:@"http://httpbin.org/patch" parameters:nil success:^(id response) {
+        NSLog(@"result = %@", response);
+    } failure:^(NSError *error) {
+        NSLog(@"error = %@", error);
+    }];
+}
+
+- (IBAction)deleteRequest:(UIButton *)sender {
+    [LYNetworking deleteRequestURLStr:@"http://httpbin.org/delete" parameters:nil success:^(id response) {
+        NSLog(@"result = %@", response);
+    } failure:^(NSError *error) {
+        NSLog(@"error = %@", error);
+    }];
+}
+
+
+
 - (IBAction)upload:(UIButton *)sender {
+    [LYNetworking uploadDataWithURLStr:@"http://127.0.0.1:8080/upload" parameters:nil fileData:UIImageJPEGRepresentation([UIImage imageNamed:@"WeChat_1446115231"], 0.3) name:@"file" fileName:@"WeChat_1446115231.jpeg" mimeType:@"image/jpeg" uploadProgress:^(int64_t bytesProgress, int64_t totalBytesProgress) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.uploadProgress.progress = bytesProgress/totalBytesProgress;
+        });
+    } success:^(id response) {
+        NSLog(@"result = %@", response);
+    } failure:^(NSError *error) {
+        NSLog(@"error = %@", error);
+    }];
 }
 
 
