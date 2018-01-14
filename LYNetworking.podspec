@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LYNetworking'
-  s.version          = '0.1.0'
-  s.summary          = 'LYNetworking.'
+  s.version          = '1.0.0'
+  s.summary          = '对AFNetworking网络请求的二次封装，支持RESTful API'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-LYNetworking 是对AFNetworking 的二次封装库.
+对iOS网络请求第三方库AFNetworking的二次封装，隔离对第三方库的直接使用，支持RESTful API。
                        DESC
 
   s.homepage         = 'https://github.com/DeveloperLY/LYNetworking'

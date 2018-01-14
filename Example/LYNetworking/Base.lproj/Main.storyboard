@@ -66,12 +66,6 @@
                                     <constraint firstAttribute="height" constant="2" id="tbq-Bg-Oj5"/>
                                 </constraints>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="图片地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2G-Pu-tsr">
-                                <rect key="frame" x="153" y="546" width="70" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3f-Mo-gKi">
                                 <rect key="frame" x="20" y="208" width="40" height="30"/>
                                 <state key="normal" title="POST"/>
@@ -111,7 +105,6 @@
                             <constraint firstItem="XzV-wf-LIK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="DnR-gs-Jrm"/>
                             <constraint firstItem="P0t-Nc-f1M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HZh-BS-b60"/>
                             <constraint firstItem="8fN-Bv-Ctc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="IWG-Xt-1cj"/>
-                            <constraint firstItem="P2G-Pu-tsr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IuL-pO-oh5"/>
                             <constraint firstItem="0EQ-D2-bUd" firstAttribute="top" secondItem="P0t-Nc-f1M" secondAttribute="top" id="JQz-vF-1pV"/>
                             <constraint firstAttribute="trailing" secondItem="0EQ-D2-bUd" secondAttribute="trailing" constant="60" id="M9r-oV-mLK"/>
                             <constraint firstItem="8fN-Bv-Ctc" firstAttribute="top" secondItem="QTL-Ms-Ah8" secondAttribute="bottom" constant="100" id="NVg-Yg-Y2B"/>
@@ -127,7 +120,6 @@
                             <constraint firstItem="QTL-Ms-Ah8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="gqb-wa-T1Q"/>
                             <constraint firstItem="Z7p-3T-4YU" firstAttribute="centerY" secondItem="8fN-Bv-Ctc" secondAttribute="centerY" id="gvF-1Z-Jsy"/>
                             <constraint firstItem="ryI-Te-P0U" firstAttribute="top" secondItem="8fN-Bv-Ctc" secondAttribute="bottom" constant="100" id="nYR-op-6LC"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="P2G-Pu-tsr" secondAttribute="bottom" constant="100" id="oZm-Jm-rNd"/>
                             <constraint firstItem="Caf-IF-NIs" firstAttribute="trailing" secondItem="Z7p-3T-4YU" secondAttribute="trailing" id="pSh-zl-Csc"/>
                             <constraint firstItem="P0t-Nc-f1M" firstAttribute="top" secondItem="ryI-Te-P0U" secondAttribute="bottom" constant="55" id="vkl-6B-Vg5"/>
                             <constraint firstAttribute="trailing" secondItem="ryI-Te-P0U" secondAttribute="trailing" constant="20" id="zQu-u9-zdU"/>
@@ -137,7 +129,6 @@
                         <outlet property="downloadProgress" destination="ryI-Te-P0U" id="DEL-Em-T4h"/>
                         <outlet property="getProgress" destination="Nm7-QS-WAN" id="soB-nf-a5c"/>
                         <outlet property="postProgress" destination="QTL-Ms-Ah8" id="kCC-B7-V6D"/>
-                        <outlet property="savePathLabel" destination="P2G-Pu-tsr" id="ZNl-ib-TFM"/>
                         <outlet property="uploadProgress" destination="8fN-Bv-Ctc" id="eNN-fd-ncP"/>
                     </connections>
                 </viewController>

@@ -4,11 +4,11 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'LYNetworking' do
-  pod 'LYNetworking', :path => '../'
-
-  target 'LYNetworkingTests' do
-    inherit! :search_paths
-
+    pod 'LYNetworking', :path => '../'
     
-  end
+    target 'LYNetworkingTests' do
+        inherit! :search_paths
+        
+        
+    end
 end

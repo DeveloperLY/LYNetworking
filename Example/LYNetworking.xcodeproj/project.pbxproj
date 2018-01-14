@@ -16,9 +16,6 @@
 		CDEE05221EABAE6D00EDCAA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDEE05211EABAE6D00EDCAA1 /* Assets.xcassets */; };
 		CDEE05251EABAE6D00EDCAA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDEE05231EABAE6D00EDCAA1 /* LaunchScreen.storyboard */; };
 		CDEE05301EABAE6E00EDCAA1 /* LYNetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE052F1EABAE6E00EDCAA1 /* LYNetworkingTests.m */; };
-		CDEE053E1EABAFFD00EDCAA1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CDEE053B1EABAFFD00EDCAA1 /* LICENSE */; };
-		CDEE053F1EABAFFD00EDCAA1 /* LYNetworking.podspec in Resources */ = {isa = PBXBuildFile; fileRef = CDEE053C1EABAFFD00EDCAA1 /* LYNetworking.podspec */; };
-		CDEE05401EABAFFD00EDCAA1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CDEE053D1EABAFFD00EDCAA1 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +33,9 @@
 		2B313917F32B4A4FBC96B96E /* Pods_LYNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64DBE7838C2C4E3284F70527 /* Pods_LYNetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYNetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6EF47AF1AA2428338696F7 /* Pods-LYNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYNetworking/Pods-LYNetworking.debug.xcconfig"; sourceTree = "<group>"; };
+		CDCFFAAE200BAD15006B771D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		CDCFFAB0200BAD1C006B771D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		CDCFFAB2200BAD25006B771D /* LYNetworking.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = LYNetworking.podspec; path = ../LYNetworking.podspec; sourceTree = "<group>"; };
 		CDEE05121EABAE6D00EDCAA1 /* LYNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDEE05161EABAE6D00EDCAA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CDEE05181EABAE6D00EDCAA1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -49,9 +49,6 @@
 		CDEE052B1EABAE6E00EDCAA1 /* LYNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDEE052F1EABAE6E00EDCAA1 /* LYNetworkingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYNetworkingTests.m; sourceTree = "<group>"; };
 		CDEE05311EABAE6E00EDCAA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CDEE053B1EABAFFD00EDCAA1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		CDEE053C1EABAFFD00EDCAA1 /* LYNetworking.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LYNetworking.podspec; sourceTree = "<group>"; };
-		CDEE053D1EABAFFD00EDCAA1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D04B320295EF515CAD462591 /* Pods-LYNetworkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYNetworkingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYNetworkingTests/Pods-LYNetworkingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E1AF6921AF44969102F25447 /* Pods-LYNetworkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYNetworkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYNetworkingTests/Pods-LYNetworkingTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,9 +151,9 @@
 		CDEE053A1EABAFE200EDCAA1 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				CDEE053B1EABAFFD00EDCAA1 /* LICENSE */,
-				CDEE053C1EABAFFD00EDCAA1 /* LYNetworking.podspec */,
-				CDEE053D1EABAFFD00EDCAA1 /* README.md */,
+				CDCFFAAE200BAD15006B771D /* LICENSE */,
+				CDCFFAB2200BAD25006B771D /* LYNetworking.podspec */,
+				CDCFFAB0200BAD1C006B771D /* README.md */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
@@ -254,8 +251,6 @@
 			files = (
 				CDEE05251EABAE6D00EDCAA1 /* LaunchScreen.storyboard in Resources */,
 				CDEE05221EABAE6D00EDCAA1 /* Assets.xcassets in Resources */,
-				CDEE053E1EABAFFD00EDCAA1 /* LICENSE in Resources */,
-				CDEE053F1EABAFFD00EDCAA1 /* LYNetworking.podspec in Resources */,
 				CDEE05201EABAE6D00EDCAA1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,7 +377,6 @@
 			files = (
 				CDEE051D1EABAE6D00EDCAA1 /* ViewController.m in Sources */,
 				CDEE051A1EABAE6D00EDCAA1 /* AppDelegate.m in Sources */,
-				CDEE05401EABAFFD00EDCAA1 /* README.md in Sources */,
 				CDEE05171EABAE6D00EDCAA1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
