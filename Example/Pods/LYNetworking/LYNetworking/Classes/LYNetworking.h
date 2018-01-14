@@ -62,10 +62,10 @@ typedef NS_ENUM(NSInteger, LYRequestPriority) {
 
 /******************** 网络状态 ********************/
 typedef NS_ENUM(NSInteger,  LYNetworkStatus) {
-    LYNetworkStatusUnknown            = -1,   // 未知
-    LYNetworkStatusNotReachable       = 0,    // 无连接
-    LYNetworkStatusReachableViaWWAN   = 1,    // 蜂窝网络
-    LYNetworkStatusReachableViaWiFi   = 2     // WiFi
+    LYNetworkStatusUnknown            = 1 << 0,    // 未知
+    LYNetworkStatusNotReachable       = 1 << 1,    // 无连接
+    LYNetworkStatusReachableViaWWAN   = 1 << 2,    // 蜂窝网络
+    LYNetworkStatusReachableViaWiFi   = 1 << 3     // WiFi
 };
 
 /**
