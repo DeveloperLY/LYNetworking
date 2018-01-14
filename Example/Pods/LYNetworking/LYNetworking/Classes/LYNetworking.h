@@ -36,6 +36,9 @@ typedef void(^LYTransfeProgress)(int64_t bytesProgress, int64_t totalBytesProgre
 typedef NS_ENUM(NSInteger, LYRequestMethod) {
     LYRequestMethodGet,
     LYRequestMethodPost,
+    LYRequestMethodPut,
+    LYRequestMethodPatch,
+    LYRequestMethodDelete,
     LYRequestMethodUpload,
     LYRequestMethodDownload
 };
@@ -125,7 +128,7 @@ typedef NSURLSessionTask LYURLSessionTask;
  */
 + (void)cancelAllRequest;
 
-/******************** GET请求 ********************/
+/******************** GET (SELECT) 请求 ********************/
 
 /**
  *  GET请求
@@ -179,7 +182,7 @@ typedef NSURLSessionTask LYURLSessionTask;
                                success:(LYResponseSuccess)success
                                failure:(LYResponseFailure)failure;
 
-/******************** POST请求 ********************/
+/******************** POST (CREATE) 请求 ********************/
 
 /**
  *  POST请求
@@ -216,6 +219,58 @@ typedef NSURLSessionTask LYURLSessionTask;
                                progress:(LYTransfeProgress)progress
                                 success:(LYResponseSuccess)success
                                 failure:(LYResponseFailure)failure;
+
+
+/******************** PUT (UPDATE) 请求 ********************/
+
+/**
+ *  PUT请求（客户端提供改变后的完整资源）
+ *
+ *  @param urlStr     请求路径（不包含beseURL）
+ *  @param parameters put参数
+ *  @param success    成功的回调
+ *  @param failure    失败的回调
+ *
+ *  @return 返回LYURLSessionTask对象中有用于取消请求API
+ */
++ (LYURLSessionTask *)putRequestURLStr:(NSString *)urlStr
+                             parameters:(NSDictionary *)parameters
+                                success:(LYResponseSuccess)success
+                                failure:(LYResponseFailure)failure;
+
+/******************** PATCH (UPDATE) 请求 ********************/
+
+/**
+ *  PATCH请求（客户端提供改变的属性）
+ *
+ *  @param urlStr     请求路径（不包含beseURL）
+ *  @param parameters patch参数
+ *  @param success    成功的回调
+ *  @param failure    失败的回调
+ *
+ *  @return 返回LYURLSessionTask对象中有用于取消请求API
+ */
++ (LYURLSessionTask *)patchRequestURLStr:(NSString *)urlStr
+                            parameters:(NSDictionary *)parameters
+                               success:(LYResponseSuccess)success
+                               failure:(LYResponseFailure)failure;
+
+/******************** DELETE (DELETE) 请求 ********************/
+
+/**
+ *  DELETE请求（客户端提供改变的属性）
+ *
+ *  @param urlStr     请求路径（不包含beseURL）
+ *  @param parameters delete参数
+ *  @param success    成功的回调
+ *  @param failure    失败的回调
+ *
+ *  @return 返回LYURLSessionTask对象中有用于取消请求API
+ */
++ (LYURLSessionTask *)deleteRequestURLStr:(NSString *)urlStr
+                              parameters:(NSDictionary *)parameters
+                                 success:(LYResponseSuccess)success
+                                 failure:(LYResponseFailure)failure;
 
 #pragma mark - 上传单个文件
 /**

@@ -121,7 +121,7 @@ static YYCache *_cache;
     return _cache;
 }
 
-#pragma mark - GET请求
+#pragma mark - GET（SELECT）请求
 + (LYURLSessionTask *)getRequestURLStr:(NSString *)urlStr
                                isCache:(BOOL)isCache
                                success:(LYResponseSuccess)success
@@ -160,7 +160,7 @@ static YYCache *_cache;
     }];
 }
 
-#pragma mark - POST请求
+#pragma mark - POST（CREATE）请求
 + (LYURLSessionTask *)postRequestURLStr:(NSString *)urlStr
                                 isCache:(BOOL)isCache
                              parameters:(NSDictionary *)parameters
@@ -179,6 +179,42 @@ static YYCache *_cache;
     return [self requestWithUrl:urlStr isCache:isCache requsetMethod:LYRequestMethodPost parameters:parameters fileData:nil name:nil fileName:nil mimeType:nil saveToPath:nil transfeProgress:^(int64_t bytesProgress, int64_t totalBytesProgress) {
         LY_SAFE_BLOCK(progress, bytesProgress, totalBytesProgress);
     } success:^(id response) {
+        LY_SAFE_BLOCK(success, response);
+    } failure:^(NSError *error) {
+        LY_SAFE_BLOCK(failure, error);
+    }];
+}
+
+#pragma mark - PUT (UPDATE) 请求
++ (LYURLSessionTask *)putRequestURLStr:(NSString *)urlStr
+                            parameters:(NSDictionary *)parameters
+                               success:(LYResponseSuccess)success
+                               failure:(LYResponseFailure)failure {
+    return [self requestWithUrl:urlStr isCache:NO requsetMethod:LYRequestMethodPut parameters:parameters fileData:nil name:nil fileName:nil mimeType:nil saveToPath:nil transfeProgress:nil success:^(id response) {
+        LY_SAFE_BLOCK(success, response);
+    } failure:^(NSError *error) {
+        LY_SAFE_BLOCK(failure, error);
+    }];
+}
+
+#pragma mark - PATCH (UPDATE) 请求
++ (LYURLSessionTask *)patchRequestURLStr:(NSString *)urlStr
+                              parameters:(NSDictionary *)parameters
+                                 success:(LYResponseSuccess)success
+                                 failure:(LYResponseFailure)failure {
+    return [self requestWithUrl:urlStr isCache:NO requsetMethod:LYRequestMethodPatch parameters:parameters fileData:nil name:nil fileName:nil mimeType:nil saveToPath:nil transfeProgress:nil success:^(id response) {
+        LY_SAFE_BLOCK(success, response);
+    } failure:^(NSError *error) {
+        LY_SAFE_BLOCK(failure, error);
+    }];
+}
+
+#pragma mark - DELETE (DELETE) 请求
++ (LYURLSessionTask *)deleteRequestURLStr:(NSString *)urlStr
+                              parameters:(NSDictionary *)parameters
+                                 success:(LYResponseSuccess)success
+                                 failure:(LYResponseFailure)failure {
+    return [self requestWithUrl:urlStr isCache:NO requsetMethod:LYRequestMethodDelete parameters:parameters fileData:nil name:nil fileName:nil mimeType:nil saveToPath:nil transfeProgress:nil success:^(id response) {
         LY_SAFE_BLOCK(success, response);
     } failure:^(NSError *error) {
         LY_SAFE_BLOCK(failure, error);
@@ -303,6 +339,60 @@ static YYCache *_cache;
             if (!isCache || ![cacheData isEqual:responseObject]) {
                 LY_SAFE_BLOCK(success, responseObject);
             }
+            
+            [[self allTasks] removeObject:task];
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            [[self allTasks] removeObject:task];
+            
+            [self handleCallbackWithError:error failure:failure];
+            
+            NSLog(@"%zd---%@",error.code, error.description);
+        }];
+    }
+    
+    if (requestMethod == LYRequestMethodPut) {
+        sessionTask = [manager PUT:url parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;// 关闭网络指示器
+            });
+            
+            LY_SAFE_BLOCK(success, responseObject);
+            
+            [[self allTasks] removeObject:task];
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            [[self allTasks] removeObject:task];
+            
+            [self handleCallbackWithError:error failure:failure];
+            
+            NSLog(@"%zd---%@",error.code, error.description);
+        }];
+    }
+    
+    if (requestMethod == LYRequestMethodPatch) {
+        sessionTask = [manager PATCH:url parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;// 关闭网络指示器
+            });
+            
+            LY_SAFE_BLOCK(success, responseObject);
+            
+            [[self allTasks] removeObject:task];
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            [[self allTasks] removeObject:task];
+            
+            [self handleCallbackWithError:error failure:failure];
+            
+            NSLog(@"%zd---%@",error.code, error.description);
+        }];
+    }
+    
+    if (requestMethod == LYRequestMethodDelete) {
+        sessionTask = [manager DELETE:url parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;// 关闭网络指示器
+            });
+            
+            LY_SAFE_BLOCK(success, responseObject);
             
             [[self allTasks] removeObject:task];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
