@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LYNetworking'
-  s.version          = '1.0.0'
+  s.version          = '0.9.0'
   s.summary          = '对AFNetworking网络请求的二次封装，支持RESTful API'
 
 # This description is used to generate tags and improve search results.
