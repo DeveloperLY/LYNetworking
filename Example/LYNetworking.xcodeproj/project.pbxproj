@@ -35,7 +35,7 @@
 		CC6EF47AF1AA2428338696F7 /* Pods-LYNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYNetworking/Pods-LYNetworking.debug.xcconfig"; sourceTree = "<group>"; };
 		CDCFFAAE200BAD15006B771D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		CDCFFAB0200BAD1C006B771D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		CDCFFAB2200BAD25006B771D /* LYNetworking.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = LYNetworking.podspec; path = ../LYNetworking.podspec; sourceTree = "<group>"; };
+		CDCFFAB2200BAD25006B771D /* LYNetworking.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = LYNetworking.podspec; path = ../LYNetworking.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CDEE05121EABAE6D00EDCAA1 /* LYNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDEE05161EABAE6D00EDCAA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CDEE05181EABAE6D00EDCAA1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -170,7 +170,6 @@
 				CDEE050F1EABAE6D00EDCAA1 /* Frameworks */,
 				CDEE05101EABAE6D00EDCAA1 /* Resources */,
 				77631410C4AC59DA1C18CD04 /* [CP] Embed Pods Frameworks */,
-				CED5BEC48F9A780EAEDED1ED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -189,8 +188,6 @@
 				CDEE05271EABAE6E00EDCAA1 /* Sources */,
 				CDEE05281EABAE6E00EDCAA1 /* Frameworks */,
 				CDEE05291EABAE6E00EDCAA1 /* Resources */,
-				D580F134649D484A7DDA19D8 /* [CP] Embed Pods Frameworks */,
-				4CC5E00DC426CCCD0317C3AF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,6 +227,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -265,28 +263,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4CC5E00DC426CCCD0317C3AF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYNetworkingTests/Pods-LYNetworkingTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		77631410C4AC59DA1C18CD04 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LYNetworking/Pods-LYNetworking-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-LYNetworking/Pods-LYNetworking-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/LYNetworking/LYNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
@@ -299,7 +282,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYNetworking/Pods-LYNetworking-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LYNetworking/Pods-LYNetworking-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7B81190B08139F34BDA78D2B /* [CP] Check Pods Manifest.lock */ = {
@@ -320,21 +303,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CED5BEC48F9A780EAEDED1ED /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYNetworking/Pods-LYNetworking-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D317D25C3F3352A5890FF209 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -351,21 +319,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D580F134649D484A7DDA19D8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYNetworkingTests/Pods-LYNetworkingTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
